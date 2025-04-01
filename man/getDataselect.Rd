@@ -57,8 +57,9 @@ Handling all possible metadata differences so that the data may be merged is bey
 package. Instead, to avoid errors, users may specify \code{ignoreEpoch=TRUE} in which case
 the very first SNCL-epoch encountered will be used and all others will be discarded.
 
-For access to restricted data, getDataselect will look for system environmental variable "IrisClient_netrc"
-which should point to a .netrc authentication file.
+For access to restricted data, getDataselect will look for a system environmental variable "IrisClient_passw" which should be a 
+string in the form "login:password". Alternatively, getDataselect will look for system environmental variable 
+"IrisClient_netrc" which should point to a .netrc authentication file.
 
 }
 

@@ -294,7 +294,7 @@ if (exists("tr2"))  { rm(tr2) }
 Access to triggering algorithms for detecting events is provided by the
 `STALTA()` method of `Trace` objects.
 ( *cf* [A Comparison of Select Trigger Algorithms for Automated Global Seismic 
-Phase and Event Detection](https://pubs.geoscienceworld.org/ssa/bssa/article-abstract/88/1/95/102726/A-comparison-of-select-trigger-algorithms-for?redirectedFrom=fulltext)). The `STALTA()` method has the following
+Phase and Event Detection](https://pubs.geoscienceworld.org/ssa/bssa/article-abstract/88/1/95/102726/A-comparison-of-select-trigger-algorithms-for)). The `STALTA()` method has the following
 arguments and defaults:
 
   * `x` -- `Trace` being analyzed

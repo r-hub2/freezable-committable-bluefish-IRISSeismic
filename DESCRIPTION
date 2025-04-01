@@ -1,6 +1,6 @@
 Type: Package
 Package: IRISSeismic
-Version: 1.6.7
+Version: 1.7.0
 Title: Classes and Methods for Seismic Data Analysis
 Authors@R: c(
     person("Jonathan", "Callahan", email="jonathan@mazamascience.com", role=c("aut")),
@@ -20,7 +20,7 @@ Description: Provides classes and methods for seismic data analysis. The
              methods support data returned by web services provided by the 'IRIS DMC'
              <http://service.iris.edu/>.
 Collate: Class-Trace.R Class-Stream.R Class-IrisClient.R
-        mseedWrappers.R Utils.R spectralUtils.R
+        mseedWrappers.R Utils.R spectralUtils.R zzz.R
 License: GPL (>= 2)
 Repository: CRAN
 NeedsCompilation: yes
@@ -30,4 +30,4 @@ Author: Jonathan Callahan [aut],
   Mary Templeton [aut],
   Chad Trabant [ctb]
 Maintainer: Gillian Sharer <gillian.sharer@earthscope.org>
-Packaged: 2024-07-30 17:57:35 UTC; gilliansharer
+Packaged: 2025-04-01 02:10:23 UTC; gilliansharer

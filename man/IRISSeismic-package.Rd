@@ -6,14 +6,19 @@
 \title{Classes and methods for seismic data analysis}
 
 \description{
-This package provides S4 classes for downloading and processing seismological 
-data available from EarthScope (\url{https://www.earthscope.org/}), formerly IRIS Data Management Center.
-Core classes \code{Trace}, \code{Stream} and \code{IrisClient} and their associated methods
-are inspired by the functionality available in the python ObsPy package (\url{https://github.com/obspy/obspy/wiki/}).
+  This package provides S4 classes for downloading and processing seismological
+  data available from Earthscope Consortium (\url{https://www.earthscope.org}) (formerly IRIS) or
+  other data centers offering FDSN web services.
+  Core classes \code{Trace}, \code{Stream} and \code{IrisClient} and their associated methods
+  are inspired by the functionality available in the python ObsPy package (\url{https://github.com/obspy/obspy/wiki/}).
 }
 
 \section{Introduction}{
   The "IRISSeismic-intro" vignette gives introductory examples on using the package.
+
+  In 2023, IRIS (Incorporated Research Institutions for Seismology) and UNAVCO merged
+  to form EarthScope Consortium. IRIS (now EarthScope) webservices are unchanged but
+  can now be accessed at \url{https://service.earthscope.org} as well as \url{https://service.iris.edu}.
 }
 
 \author{
@@ -28,9 +33,21 @@ EarthScope web services: \url{https://service.earthscope.org/}
 
 \section{History}{
 
+  version 1.7.0
+  \itemize{
+    \item{ added slot 'retries' to the IrisClient class, for use by select API calls}
+    \item{ addition of Class-IrisClient slot for fdsnws event service site }
+    \item{ addition of environmental variable `IrisClient_event_site` for fdsnws event service site }
+    \item{ addition of environmental variable `IrisClient_passw` for authorization credentials
+           for restricted data, used by `getDataselect.IrisClient` }  
+  }
+
   version 1.6.7
   \itemize{
-    \item{ replaced service.iris.edu with service.earthscope.org}
+      \item{ update maintainer contact information }
+      \item{ update IRIS references to EarthScope }
+      \item{ replaced service.iris.edu with service.earthscope.org}
+      \item{ changed http calls to https}
   }
 
   version 1.6.6

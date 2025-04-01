@@ -1,0 +1,158 @@
+DESCRIPTION:    person("Rob", "Casey", email="rob.casey@earthscope.org", role=c("aut")),
+DESCRIPTION:    person("Gillian", "Sharer", email="gillian.sharer@earthscope.org", role=c("aut","cre")), 
+DESCRIPTION:    person("Mary", "Templeton", email="mary.templeton@earthscope.org", role=c("aut")),
+DESCRIPTION:    person("Chad", "Trabant", email="chad.trabant@earthscope.org", role=c("ctb"))
+DESCRIPTION:Maintainer: Gillian Sharer <gillian.sharer@earthscope.org>
+R/Class-IrisClient.R:##    S4 classes for communicating with EarthScope web services.
+R/Class-IrisClient.R:# R classes for an EarthScope web services request client.
+R/Class-IrisClient.R:# EarthScope web service request client.
+R/Class-IrisClient.R:#    :param site: Base URL of the EarthScope web service (default
+R/Class-IrisClient.R:#        is ``'https://service.earthscope.org/'``).
+R/Class-IrisClient.R:irisSite <- "https://service.earthscope.org"
+R/Class-IrisClient.R:  if(!stringr::str_detect(Sys.getenv("IrisClient_site"), regex("service.*.iris.edu|service.*.earthscope.org"))){
+R/Class-IrisClient.R:  # https://service.earthscope.org/fdsnws/station/1/query?net=H2&sta=H2O&loc=00&cha=LHZ&starttime=2001-02-28T18:29:44&endtime=2001-02-28T19:29:44&includerestricted=false&format=text&level=channel
+R/Class-IrisClient.R:#   https://service.earthscope.org/irisws/timeseries/1/
+R/Class-IrisClient.R:  # https://service.earthscope.org/fdsnws/station/1/query?net=H2&sta=H2O&loc=00&cha=LHZ&starttime=2001-02-28T18:29:44&endtime=2001-02-28T19:29:44&includerestricted=false&format=text&level=channel
+R/Class-IrisClient.R:#   https://service.earthscope.org/irisws/rotation/1/
+R/Class-IrisClient.R:#   https://service.earthscope.org/fdsnws/station/1/
+R/Class-IrisClient.R:#   https://service.earthscope.org/fdsnws/station/1/
+R/Class-IrisClient.R:#   https://service.earthscope.org/fdsnws/station/1/
+R/Class-IrisClient.R:#   https://service.earthscope.org/fdsnws/station/1/
+R/Class-IrisClient.R:# https://service.earthscope.org/fdsnws/availability/1/
+R/Class-IrisClient.R:#   https://service.earthscope.org/irisws/traveltime/1/
+R/Class-IrisClient.R:  # https://service.earthscope.org/irisws/traveltime/1/query?evloc=[-11.12,165.378]&evdepth=10.0&staloc=[-30.4183,151.6293]
+R/Class-IrisClient.R:#   https://service.earthscope.org/irisws/distaz/1/
+R/Class-IrisClient.R:  # https://service.earthscope.org/irisws/distaz/1/query?stalat=0.0&stalon=0.0&evtlat=15.0&evtlon=0.0
+R/Class-IrisClient.R:  #  new output for https://service.earthscope.org/irisws/distaz/1/query?stalat=0.0&stalon=0.0&evtlat=15.0&evtlon=0.0 looks like:
+R/Utils.R:#   https://service.earthscope.org/irisws/rotation/1/
+R/Utils.R:#   https://service.earthscope.org/irisws/rotation/docs/1/help/
+man/transferFunctionSpectra.Rd:The \code{transferFunctionSpectra} function returns a frequency-amplitude-phase response from the service.earthscope.org/iris/ws/evalresp web service for a seismic \code{Stream} object
+man/transferFunctionSpectra.Rd:  \code{transferFunctionSpectra} will always call \code{getEvalresp} using the service.earthscope.org/irisws/evalresp 
+man/transferFunctionSpectra.Rd:Mary Templeton \email{mary.templeton@earthscope.org}
+man/envelope.Rd:# Open a connection to EarthScope webservices
+man/Trace-class.Rd:# Open a connection to EarthScope webservices
+man/getAvailability.Rd:\title{Retrieve Channel metadata from EarthScope}
+man/getAvailability.Rd:The \code{getAvailability} method obtains channel metadata for available channels from the EarthScope
+man/getAvailability.Rd:For more details see the \href{https://service.earthscope.org/fdsnws/station/1/}{web service documentation}.
+man/getAvailability.Rd:The EarthScope station web service:
+man/getAvailability.Rd:  \url{https://service.earthscope.org/fdsnws/station/1/}
+man/getAvailability.Rd:# Open a connection to EarthScope webservices
+man/getUnavailability.Rd:\title{Retrieve Channel metadata from EarthScope}
+man/getUnavailability.Rd:The \code{getUnavailability} method obtains metadata for channels that are not available from the EarthScope station web service
+man/getUnavailability.Rd:For more details see the \href{https://service.earthscope.org/fdsnws/station/1/}{webservice documentation}.
+man/getUnavailability.Rd:The EarthScope station webservice:
+man/getUnavailability.Rd:  \url{https://service.earthscope.org/fdsnws/station/1/}
+man/getUnavailability.Rd:# Open a connection to EarthScope webservices
+man/unHistogram.Rd:Rob Casey \email{rob.casey@earthscope.org}
+man/eventWindow.Rd:# Open a connection to EarthScope webservices
+man/basicStats.Rd:# Open a connection to EarthScope webservices
+man/multiplyBy.Rd:# Open a connection to EarthScope webservices
+man/getSNCL.Rd:\title{Retrieve seismic data from EarthScope}
+man/getSNCL.Rd:The EarthScope dataselect web service:
+man/getSNCL.Rd:  \url{https://service.earthscope.org/fdsnws/dataselect/1/}
+man/getSNCL.Rd:# Open a connection to EarthScope webservices
+man/mergeUpDownTimes.Rd:# Open a connection to EarthScope webservices
+man/getNetwork.Rd:\title{Retrieve Network metadata from EarthScope}
+man/getNetwork.Rd:The \code{getNetwork} method obtains network metadata from the EarthScope station web service
+man/getNetwork.Rd:For more details see the \href{https://service.earthscope.org/fdsnws/station/1/}{web service documentation}.
+man/getNetwork.Rd:The EarthScope station web service:
+man/getNetwork.Rd:  \url{https://service.earthscope.org/fdsnws/station/1/}
+man/getNetwork.Rd:# Open a connection to EarthScope webservices
+man/butterworth.Rd:# Open a connection to EarthScope webservices
+man/STALTA.Rd:# Open a connection to EarthScope webservices
+man/getStation.Rd:\title{Retrieve Station metadata from EarthScope}
+man/getStation.Rd:The \code{getStation} method obtains station metadata from the EarthScope station web service
+man/getStation.Rd:For more details see the \href{https://service.earthscope.org/fdsnws/station/1/}{web service documentation}.
+man/getStation.Rd:The EarthScope station web service:
+man/getStation.Rd:  \url{https://service.earthscope.org/fdsnws/station/1/}
+man/getStation.Rd:# Open a connection to EarthScope webservices
+man/IRISSeismic-package.Rd:  data available from Earthscope Consortium (\url{https://www.earthscope.org}) (formerly IRIS) or
+man/IRISSeismic-package.Rd:  to form EarthScope Consortium. IRIS (now EarthScope) webservices are unchanged but
+man/IRISSeismic-package.Rd:  can now be accessed at \url{https://service.earthscope.org} as well as \url{https://service.iris.edu}.
+man/IRISSeismic-package.Rd:EarthScope web services: \url{https://service.earthscope.org/}
+man/IRISSeismic-package.Rd:    \item{ replaced service.iris.edu with service.earthscope.org}
+man/IRISSeismic-package.Rd:# Open a connection to EarthScope webservices
+man/hilbertFFT.Rd:# Open a connection to EarthScope webservices
+man/getTraveltime.Rd:\title{Retrieve seismic traveltime information from EarthScope}
+man/getTraveltime.Rd:the EarthScope \code{traveltime} web service and returns it in a dataframe.
+man/getTraveltime.Rd:The EarthScope traveltime web service:
+man/getTraveltime.Rd:  \url{https://service.earthscope.org/irisws/traveltime/1/}
+man/getTraveltime.Rd:# Open a connection to EarthScope webservices
+man/rmsVariance.Rd:# Open a connection to EarthScope webservices
+man/triggerOnset.Rd:# Open a connection to EarthScope webservices
+man/getEvent.Rd:other than "https://service.earthscope.org", getEvent will point to \code{obj@site}/fdsnws/event/1/. The event service must be able to output
+man/getEvent.Rd:# Open a connection to EarthScope webservices
+man/hilbert.Rd:# Open a connection to EarthScope webservices
+man/getRotation.Rd:\title{Retrieve rotated seismic data from EarthScope}
+man/getRotation.Rd:The \code{getRotation} method makes a request of the EarthScope \code{rotation} 
+man/getRotation.Rd:(See \href{https://service.earthscope.org/irisws/rotation/1/}{rotation documentation}.)
+man/getRotation.Rd:The EarthScope rotation web service:
+man/getRotation.Rd:  \url{https://service.earthscope.org/irisws/rotation/1/}
+man/getChannel.Rd:\title{Retrieve Channel metadata from EarthScope}
+man/getChannel.Rd:The \code{getChannel} method obtains channel metadata from the EarthScope \code{station} web service
+man/getChannel.Rd:For more details see the \href{https://service.earthscope.org/fdsnws/station/1/}{webservice documentation}.
+man/getChannel.Rd:The EarthScope station webservice:
+man/getChannel.Rd:  \url{https://service.earthscope.org/fdsnws/station/1/}
+man/getChannel.Rd:# Open a connection to EarthScope webservices
+man/rotate2D.Rd:EarthScope rotation web service:
+man/rotate2D.Rd:  \url{https://service.earthscope.org/irisws/rotation/1/}
+man/getGaps.Rd:# Open a connection to EarthScope webservices
+man/IrisClient-class.Rd:A class for making data and metadata requests from EarthScope web services.
+man/IrisClient-class.Rd:    this is the first part of the url that the web service will be pointed to, defaults to "https://service.earthscope.org" }
+man/IrisClient-class.Rd:    if \code{site=https://service.earthscope.org}, defaults to \code{https://earthquake.usgs.gov} }
+man/IrisClient-class.Rd:# Open a connection to EarthScope webservices
+man/getDataAvailability.Rd:\title{Retrieve miniseed trace extents from EarthScope}
+man/getDataAvailability.Rd:The \code{getDataAvailability} method obtains miniseed time extents from the EarthScope 
+man/getDataAvailability.Rd:For more details see the \href{https://service.earthscope.org/fdsnws/availability/1/}{web service documentation}.
+man/getDataAvailability.Rd:The EarthScope station web service:
+man/getDataAvailability.Rd:  \url{https://service.earthscope.org/fdsnws/availability/1/}
+man/getDataAvailability.Rd:  \url{https://service.earthscope.org/ph5ws/availability/1/}
+man/getDataAvailability.Rd:Gillian Sharer \email{gillian.sharer@earthscope.org}
+man/getDataAvailability.Rd:# Open a connection to EarthScope webservices
+man/getTimeseries.Rd:\title{Retrieve seismic data from EarthScope}
+man/getTimeseries.Rd:The \code{getTimeseries} method makes a request of the EarthScope \code{timeseries} 
+man/getTimeseries.Rd:(See \href{https://service.earthscope.org/irisws/timeseries/1/}{timeseries documentation}.)
+man/getTimeseries.Rd:The EarthScope timeseries webservice:
+man/getTimeseries.Rd:  \url{https://service.earthscope.org/irisws/timeseries/1/}
+man/getTimeseries.Rd:# Open a connection to EarthScope webservices (use debug=TRUE so we can see the URLs generated)
+man/mergeTraces.Rd:# Open a connection to EarthScope webservices
+man/getUpDownTimes.Rd:# Open a connection to EarthScope webservices
+man/slice.Rd:# Open a connection to EarthScope webservices
+man/getDataselect.Rd:\title{Retrieve seismic data from EarthScope}
+man/getDataselect.Rd:The \code{getDataselect} method makes a request of the EarthScope \code{dataselect} 
+man/getDataselect.Rd:(See \href{https://service.earthscope.org/fdsnws/dataselect/1/}{dataselect documentation}.)
+man/getDataselect.Rd:The EarthScope dataselect webservice:
+man/getDataselect.Rd:  \url{https://service.earthscope.org/fdsnws/dataselect/1/}
+man/getDataselect.Rd:# Open a connection to EarthScope webservices
+man/DDT.Rd:# Open a connection to EarthScope webservices
+man/Stream-class.Rd:These attributes are retained primarily for assessing data quality issues within the EarthScope.
+man/Stream-class.Rd:# Open a connection to EarthScope webservices
+man/getEvalresp.Rd:\title{Retrieve instrument response information from EarthScope}
+man/getEvalresp.Rd:the EarthScope \code{evalresp} webservice.
+man/getEvalresp.Rd:(See \href{https://service.earthscope.org/fdsnws/dataselect/1/}{dataselect documentation}.)
+man/getEvalresp.Rd:The EarthScope evalresp webservice:
+man/getEvalresp.Rd:  \url{https://service.earthscope.org/irisws/evalresp/1/}
+man/getDistaz.Rd:\title{Retrieve great circle distance information from EarthScope}
+man/getDistaz.Rd:the EarthScope \code{distaz} web service.
+man/getDistaz.Rd:The EarthScope distaz webservice:
+man/getDistaz.Rd:  \url{https://service.earthscope.org/irisws/distaz/1/}
+man/TraceHeader-class.Rd:# Open a connection to EarthScope webservices
+vignettes/IRISSeismic-intro.Rmd:- Robert Casey (rob.casey@earthscope.org), EarthScope
+vignettes/IRISSeismic-intro.Rmd:- Mary Templeton (mary.templeton@earthscope.org), EarthScope
+vignettes/IRISSeismic-intro.Rmd:[Mazama Science](http://mazamascience.com) for [EarthScope](https://www.earthscope.org/) (formerly IRIS Data Management Center)
+vignettes/IRISSeismic-intro.Rmd:EarthScope [web services](https://service.earthscope.org/).  This introduction
+vignettes/IRISSeismic-intro.Rmd:In order to get data from one of the EarthScope web services we must specify all 
+vignettes/IRISSeismic-intro.Rmd:of data from EarthScope.  The fourth line checks to see how many distinct
+vignettes/IRISSeismic-intro.Rmd:### Other EarthScope web services
+vignettes/IRISSeismic-intro.Rmd:# Open a connection to EarthScope webservices
+vignettes/IRISSeismic-intro.html:<meta name="author" content="Robert Casey (rob.casey@earthscope.org), EarthScope" />
+vignettes/IRISSeismic-intro.html:<meta name="author" content="Mary Templeton (mary.templeton@earthscope.org), EarthScope" />
+vignettes/IRISSeismic-intro.html:<h4 class="author">Robert Casey (<a href="mailto:rob.casey@earthscope.org" class="email">rob.casey@earthscope.org</a>), EarthScope</h4>
+vignettes/IRISSeismic-intro.html:<h4 class="author">Mary Templeton (<a href="mailto:mary.templeton@earthscope.org" class="email">mary.templeton@earthscope.org</a>), EarthScope</h4>
+vignettes/IRISSeismic-intro.html:<a href="https://www.earthscope.org/">EarthScope</a> (formerly IRIS Data
+vignettes/IRISSeismic-intro.html:data from EarthScope <a href="https://service.earthscope.org/">web
+vignettes/IRISSeismic-intro.html:<p>In order to get data from one of the EarthScope web services we must
+vignettes/IRISSeismic-intro.html:return a <code>Stream</code> object full of data from EarthScope. The
+vignettes/IRISSeismic-intro.html:<div id="other-earthscope-web-services" class="section level3">
+vignettes/IRISSeismic-intro.html:<h3>Other EarthScope web services</h3>
+vignettes/IRISSeismic-intro.html:<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Open a connection to EarthScope webservices</span></span>

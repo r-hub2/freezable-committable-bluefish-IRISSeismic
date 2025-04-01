@@ -1,7 +1,7 @@
 ## ----setup, include=FALSE-----------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE)
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("rstudio-IRISSeismic.png")
 
 ## ----first, results="hide"----------------------------------------------------
