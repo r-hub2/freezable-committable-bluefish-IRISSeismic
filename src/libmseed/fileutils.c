@@ -471,7 +471,12 @@ ms_readmsr_main (MSFileParam **ppmsfp, MSRecord **ppmsr, const char *msfile,
               packtypes[msfp->packtype][1]);
 
       /*(replacing) sscanf (hdrstr, " %" SCNd64, &datasize);*/
+      errno = 0;
       datasize = scan_d64(hdrstr,0,&endptr);
+      if (errno != 0 && datasize == 0) {
+        perror("scan_d64 error");
+        return MS_GENERROR;
+      }
 
       packdatasize = (off_t)datasize;
 
@@ -495,7 +500,7 @@ ms_readmsr_main (MSFileParam **ppmsfp, MSRecord **ppmsr, const char *msfile,
     {
       char srcname[100];
 
-      ms_recsrcname (MSFPREADPTR (msfp), srcname, 1);
+      ms_recsrcname (MSFPREADPTR (msfp), srcname, sizeof(srcname), 1);
 
       if (!ms_matchselect (selections, srcname, HPTERROR, HPTERROR, NULL))
       {

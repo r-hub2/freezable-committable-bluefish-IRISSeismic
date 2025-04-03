@@ -35,19 +35,13 @@ EarthScope web services: \url{https://service.earthscope.org/}
 
   version 1.7.0
   \itemize{
-    \item{ added slot 'retries' to the IrisClient class, for use by select API calls}
+    \item{added slot 'retries' to the IrisClient class, for use by select API calls}
+    \item{ replaced service.iris.edu with service.earthscope.org}
+    \item{ changed http calls to https}
     \item{ addition of Class-IrisClient slot for fdsnws event service site }
     \item{ addition of environmental variable `IrisClient_event_site` for fdsnws event service site }
     \item{ addition of environmental variable `IrisClient_passw` for authorization credentials
            for restricted data, used by `getDataselect.IrisClient` }  
-  }
-
-  version 1.6.7
-  \itemize{
-      \item{ update maintainer contact information }
-      \item{ update IRIS references to EarthScope }
-      \item{ replaced service.iris.edu with service.earthscope.org}
-      \item{ changed http calls to https}
   }
 
   version 1.6.6

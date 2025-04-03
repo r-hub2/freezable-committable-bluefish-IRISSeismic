@@ -43,7 +43,7 @@ LeapSecond *leapsecondlist = NULL;
  * Returns a pointer to the resulting string or NULL on error.
  ***************************************************************************/
 char *
-ms_recsrcname (char *record, char *srcname, flag quality)
+ms_recsrcname (char *record, char *srcname, int srcname_size, flag quality)
 {
   struct fsdh_s *fsdh;
   char network[6];
@@ -63,12 +63,13 @@ ms_recsrcname (char *record, char *srcname, flag quality)
 
   /* Build the source name string including the quality indicator*/
   if (quality)
-    sprintf (srcname, "%s_%s_%s_%s_%c",
+    snprintf (srcname, srcname_size, "%s_%s_%s_%s_%c",
              network, station, location, channel, fsdh->dataquality);
+
 
   /* Build the source name string without the quality indicator*/
   else
-    sprintf (srcname, "%s_%s_%s_%s", network, station, location, channel);
+    snprintf (srcname, srcname_size, "%s_%s_%s_%s", network, station, location, channel);
 
   return srcname;
 } /* End of ms_recsrcname() */
@@ -1224,7 +1225,12 @@ ms_readleapsecondfile (char *filename)
 
       /*(replacing)fields  = sscanf (readline, "#@ %" SCNd64, &expires); REC*/
       fields = 0;
+      errno = 0;
       expires = scan_d64(readline,2,&endptr);
+      if (errno != 0 && expires == 0) {
+          perror("scan_d64 error");
+          return -1;
+      }
       if (endptr - readline + 2 > 0) fields++;
 
       if (fields == 1)
@@ -1251,7 +1257,12 @@ ms_readleapsecondfile (char *filename)
 
     /*(replacing) fields = sscanf (readline, "%" SCNd64 " %d ", &leapsecond, &TAIdelta); REC*/
     fields = 0;
+    errno = 0;
     leapsecond = scan_d64(readline,0,&endptr);
+    if (errno != 0 && leapsecond == 0) {
+      perror("scan_d64 error");
+      return -1;
+    }
     if (endptr - readline > 0) fields++;
     fields += sscanf(endptr, " %d ", &TAIdelta);
 
@@ -1760,20 +1771,12 @@ ms_gmtime_r (int64_t *timep, struct tm *result)
  * REC - 2016-12-02
  *******************************************/
 int64_t scan_d64(char *str, int offset, char **endptr) {
-
     /* implementation based on die.net strtol(3) man page example */
     int base = 10;
     int64_t val = 0;
 
     /* conversion to unsigned long long */
-    errno = 0;
     val = strtoull(str+offset, endptr, base);
-
-    if (errno != 0 && val == 0) {
-        perror("strtoull");
-        exit(EXIT_FAILURE);
-    }
-
     return val;
 }
 

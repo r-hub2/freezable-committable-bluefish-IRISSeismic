@@ -748,7 +748,7 @@ extern int      mst_writemseedgroup ( MSTraceGroup *mstg, const char *msfile, fl
 				      int reclen, flag encoding, flag byteorder, flag verbose );
 
 /* General use functions */
-extern char*    ms_recsrcname (char *record, char *srcname, flag quality);
+extern char*    ms_recsrcname (char *record, char *srcname, int srcname_size, flag quality);
 extern int      ms_splitsrcname (char *srcname, char *net, char *sta, char *loc, char *chan, char *qual);
 extern int      ms_strncpclean (char *dest, const char *source, int length);
 extern int      ms_strncpcleantail (char *dest, const char *source, int length);
